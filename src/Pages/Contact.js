@@ -132,7 +132,7 @@ const ContactForm = () => {
         <Input id="email" type="email" placeholder="Din Email" value={email} onChange={e => setEmail(e.target.value)} required />
         <Label for="message">Din Melding</Label>
         <TextArea id="message" placeholder="Din Melding" rows="4" value={message} onChange={e => setMessage(e.target.value)} required />
-        <Button type="submit" onClick={handleSubmit} onTouchStart={handleSubmit}>Send Melding</Button>
+        <Button type="submit" onClick={handleSubmit}>Send Melding</Button>
       </Form>
     </FormContainer>
     </>
