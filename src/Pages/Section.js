@@ -31,6 +31,9 @@ const SegmentButton = styled.button`
   text-align: left;
   margin: 0.5rem;
 
+  // Add a border-bottom if the button is selected
+  border-bottom: ${props => props.selected ? '2px solid black' : 'none'};
+
   &:focus {
     outline: none;
   }
@@ -107,9 +110,9 @@ const Section2 = () => {
     <GridContainer>
       <Segment>
         <SegmentController>
-          <SegmentButton onClick={() => setActiveSegment(0)}>Fasader</SegmentButton>
-          <SegmentButton onClick={() => setActiveSegment(1)}>Boliger og Nybygg</SegmentButton>
-          <SegmentButton onClick={() => setActiveSegment(2)}>Ombygging</SegmentButton>
+          <SegmentButton selected={activeSegment === 0} onClick={() => setActiveSegment(0)}>Fasader</SegmentButton>
+          <SegmentButton selected={activeSegment === 1} onClick={() => setActiveSegment(1)}>Boliger og Nybygg</SegmentButton>
+          <SegmentButton selected={activeSegment === 2} onClick={() => setActiveSegment(2)}>Ombygging</SegmentButton>
         </SegmentController>
         <SegmentText>{segmentTexts[activeSegment]}</SegmentText>
       </Segment>
