@@ -25,21 +25,38 @@ const Label = styled.label`
 `;
 
 const Input = styled.input`
-  padding: 10px;
+  padding: 20px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 4px;
+  background-color: #FBF7F6;
+  transition: background-color 0.3s ease;
+
+  &:focus {
+    outline: none;
+    background-color: #FBF7F6;
+    border-color: #555;
+  }
 `;
 
 const TextArea = styled.textarea`
-  padding: 10px;
+  padding: 20px;
+  height: 100px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 4px;
+  background-color: #FBF7F6;
+  transition: background-color 0.3s ease;
+
+  &:focus {
+    outline: none;
+    background-color: #FBF7F6;
+    border-color: #555;
+  }
 `;
 
 const Button = styled.button`
-  padding: 10px;
+  padding: 20px;
   background-color: #555;
   color: #fff;
   border: none;
