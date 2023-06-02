@@ -7,9 +7,16 @@ import MainContent from './Pages/MainContent';
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background-color: #FBF7F6; 
+    background-color: #FBF7F6;
+    font-family: 'New York', sans-serif;
+  }
+
+  p {
+    line-height: 1.5;
   }
 `;
+
+
 
 
 
