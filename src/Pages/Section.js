@@ -16,7 +16,11 @@ const GridContainer = styled.div`
 `;
 
 const SegmentController = styled.div`
-
+  @media (max-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 
 const SegmentButton = styled.button`
@@ -25,6 +29,7 @@ const SegmentButton = styled.button`
   font-size: 1.5rem;
   cursor: pointer;
   text-align: left;
+  margin: 0.5rem;
 
   &:focus {
     outline: none;
@@ -35,6 +40,11 @@ const SegmentText = styled.p`
   display: flex;
   justify-content: center;
   text-align: left;
+  padding: 1rem;
+
+  @media (max-width: 768px) {
+    padding: 1rem 2rem;
+  }
 `;
 
 const QuoteGrid = styled.div`
@@ -43,7 +53,14 @@ const QuoteGrid = styled.div`
   align-content: center;
   background-color: #555;
   height: 50vh;
-  margin-left: -1rem;
+  margin: 0;
+  padding: 2rem;
+
+  @media (min-width: 768px) {
+    height: 100%;
+    margin: -1rem;
+    padding: 4rem;
+  }
 `;
 
 const Segment = styled.div`
@@ -58,6 +75,11 @@ const QuoteText = styled.p`
   padding-top: 0;
   font-size: 1.5rem;
   color: white;
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+    font-size: 1.25rem;
+  }
 `;
 
 const QuoteIcon = styled.span`
@@ -66,7 +88,11 @@ const QuoteIcon = styled.span`
   align-items: center;
   color: white;
   font-size: 4rem;
-  padding-top: 4rem;
+
+  @media (max-width: 768px) {
+    padding-top: 2rem;
+    font-size: 2rem;
+  }
 `;
 
 const Section2 = () => {
@@ -82,11 +108,10 @@ const Section2 = () => {
     <GridContainer>
       <Segment>
         <SegmentController>
-        </SegmentController>
           <SegmentButton onClick={() => setActiveSegment(0)}>Fasader</SegmentButton>
           <SegmentButton onClick={() => setActiveSegment(1)}>Boliger og Nybygg</SegmentButton>
           <SegmentButton onClick={() => setActiveSegment(2)}>Ombygging</SegmentButton>
-        
+        </SegmentController>
         <SegmentText>{segmentTexts[activeSegment]}</SegmentText>
       </Segment>
       <QuoteGrid>
