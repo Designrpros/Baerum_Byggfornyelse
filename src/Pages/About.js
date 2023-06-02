@@ -1,22 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import House from "./House.jpg";
 import Housedesign from "./Housedesign.jpg";
 import Trash from "./Trash.jpg";
-import Section2 from './Section.js';
-import About from './About';
 
-const Main = styled.main`
-  position: relative;
-  width: 100%;
-  height: 95vh;
-  color: #333;
-  background: url(${House}) no-repeat center center/cover;
-
-  @media (max-width: 768px) {
-    height: 50vh;
-  }
-`;
 
 const Grid = styled.div`
   display: grid;
@@ -82,35 +68,23 @@ const HighlightedText = styled.span`
   }
 `;
 
-const OverlayText = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  background-color: rgba(250, 250, 250, 0.75);
-  padding: 75px;
 
-  @media (max-width: 768px) {
-    position: static;
-    transform: none;
-    padding: 20px;
-  }
-`;
-
-
-const MainContent = () => {
+const About = () => {
   return (
-    <>
-      <Main>
-        <OverlayText>
-          <h1>Velkommen til <br /><HighlightedText>Bærum<br />Byggfornyelse</HighlightedText></h1>
-        </OverlayText>
-      </Main>
-      <About />
-      <Section2 />
-    </>
+      <Grid>
+        <ImageContainer image={Housedesign} column="2" row="1" />
+        <TextContainer1 column="1" row="1">
+          <h1><HighlightedText>Om Oss</HighlightedText></h1>
+        </TextContainer1>
+        <TextContainer2 column="2" row="2">
+          <p>Bærum Byggfornyelse er et anerkjent snekkerfirma som har spesialisert seg på å forvandle boliger og kommersielle eiendommer gjennom omfattende oppussings- og fornyelsesprosjekter. Vi har et team av erfarne håndverkere og entreprenører som er dedikerte til å levere høykvalitetsarbeid.
+Vi er stolte av vår lange historie med vellykkede prosjekter og fornøyde kunder. Med vår ekspertise og grundige kunnskap innen byggfornyelse, kan vi hjelpe deg med å realisere din visjon for ditt hjem eller din eiendom. Enten det er en enkel oppussing eller en totalrenovering, er vi klare til å ta fatt på ethvert prosjekt.
+</p>
+        </TextContainer2>
+        <ImageContainer image={Trash} column="1" row="2" />
+      </Grid>
+
   );
 };  
 
-export default MainContent;
+export default About;
