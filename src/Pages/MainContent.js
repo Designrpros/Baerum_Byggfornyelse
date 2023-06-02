@@ -14,63 +14,11 @@ const Main = styled.main`
   background: url(${House}) no-repeat center center/cover;
 
   @media (max-width: 768px) {
-    height: 50vh;
+    height: 100vh;
+    background-size: cover;
   }
 `;
 
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  height: 100vh;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    height: auto;
-  }
-`;
-
-const ImageContainer = styled.div`
-  background: url(${props => props.image}) no-repeat center center/cover;
-  grid-column: ${props => props.column};
-  grid-row: ${props => props.row};
-
-  @media (max-width: 768px) {
-    grid-column: 1;
-    grid-row: auto;
-  }
-`;
-
-const TextContainer1 = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  grid-column: ${props => props.column};
-  grid-row: ${props => props.row};
-
-  @media (max-width: 768px) {
-    grid-column: 1;
-    grid-row: auto;
-  }
-`;
-
-const TextContainer2 = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  padding: 20px;
-  font: 20px rubik;
-  grid-column: ${props => props.column};
-  grid-row: ${props => props.row};
-
-  @media (max-width: 768px) {
-    grid-column: 1;
-    grid-row: auto;
-  }
-`;
 
 const HighlightedText = styled.span`
   font-weight: bold;
@@ -91,12 +39,24 @@ const OverlayText = styled.div`
   background-color: rgba(250, 250, 250, 0.75);
   padding: 75px;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   @media (max-width: 768px) {
-    position: static;
-    transform: none;
-    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 75px;
+  }
+  
+  h1 {
+    margin: 0;
   }
 `;
+
+
 
 
 const MainContent = () => {
