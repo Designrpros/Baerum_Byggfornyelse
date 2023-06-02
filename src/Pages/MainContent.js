@@ -1,10 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import House from "./House.jpg";
-import Housedesign from "./Housedesign.jpg";
-import Trash from "./Trash.jpg";
-import Section2 from './Section.js';
+import Section2 from './Section';
 import About from './About';
+import GallerySlider from './GallerySlider.js';
+import Contact from './Contact';
+
+import { faPhone, faEnvelope, faClock } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Main = styled.main`
   position: relative;
@@ -16,17 +20,6 @@ const Main = styled.main`
   @media (max-width: 768px) {
     height: 100vh;
     background-size: cover;
-  }
-`;
-
-
-const HighlightedText = styled.span`
-  font-weight: bold;
-  font-size: 70px;
-  font-family: rubik;
-
-  @media (max-width: 768px) {
-    font-size: 50px;
   }
 `;
 
@@ -50,14 +43,21 @@ const OverlayText = styled.div`
     left: 50%;
     padding: 75px;
   }
-  
+
   h1 {
     margin: 0;
   }
 `;
 
+const HighlightedText = styled.span`
+  font-weight: bold;
+  font-size: 70px;
+  font-family: rubik;
 
-
+  @media (max-width: 768px) {
+    font-size: 50px;
+  }
+`;
 
 const MainContent = () => {
   return (
@@ -65,12 +65,24 @@ const MainContent = () => {
       <Main>
         <OverlayText>
           <h1>Velkommen til <br /><HighlightedText>Bærum<br />Byggfornyelse</HighlightedText></h1>
+          <p>
+          <FontAwesomeIcon icon={faPhone} className="icon" />
+          <br />
+          48 30 51 00
+        </p>
+        <p>
+          <FontAwesomeIcon icon={faEnvelope} className="icon" />
+          <br />
+          POST@BYGGFORNYELSE.NO
+        </p>
         </OverlayText>
       </Main>
       <About />
       <Section2 />
+      <GallerySlider />
+      <Contact />
     </>
   );
-};  
+};
 
 export default MainContent;

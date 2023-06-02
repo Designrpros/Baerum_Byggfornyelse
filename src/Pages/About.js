@@ -39,12 +39,9 @@ const TextContainer1 = styled.div`
   @media (max-width: 768px) {
     grid-column: 1;
     grid-row: auto;
-    text-align: left;
-    justify-content: flex-start;
-    padding: 25px;
+    text-align: center;
   }
 `;
-
 
 const TextContainer2 = styled.div`
   display: flex;

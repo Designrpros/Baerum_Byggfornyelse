@@ -57,7 +57,6 @@ const QuoteGrid = styled.div`
   padding: 2rem;
 
   @media (min-width: 768px) {
-    height: 100%;
     margin: -1rem;
     padding: 4rem;
   }
@@ -120,8 +119,7 @@ const Section2 = () => {
         </QuoteIcon>
         <QuoteText>
           Vi vet mye om hvilke utfordringer du står ovenfor og hvilke løsninger som vil fungere i praksis,
-          når eldre bygninger må fornyes. Som spesialister på nettopp byggfornyelse og energirehabilitering
-          har vi opparbeidet bred kompetanse på akkurat dette området.
+          når eldre bygninger må fornyes.
         </QuoteText>
       </QuoteGrid>
     </GridContainer>
