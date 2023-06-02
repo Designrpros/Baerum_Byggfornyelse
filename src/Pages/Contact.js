@@ -102,10 +102,14 @@ const ContactForm = () => {
     }, 'qBalOK5z0utTf94im')
     .then((response) => {
        console.log('SUCCESS!', response.status, response.text);
+       setName("");
+       setEmail("");
+       setMessage("");
     }, (err) => {
        console.log('FAILED...', err);
     });
   };
+  
 
   return (
     <>
