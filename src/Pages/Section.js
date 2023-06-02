@@ -16,8 +16,7 @@ const GridContainer = styled.div`
 `;
 
 const SegmentController = styled.div`
-  display: flex;
-  align-items: center;
+
 `;
 
 const SegmentButton = styled.button`
@@ -25,6 +24,7 @@ const SegmentButton = styled.button`
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+  text-align: left;
 
   &:focus {
     outline: none;
@@ -82,10 +82,11 @@ const Section2 = () => {
     <GridContainer>
       <Segment>
         <SegmentController>
+        </SegmentController>
           <SegmentButton onClick={() => setActiveSegment(0)}>Fasader</SegmentButton>
           <SegmentButton onClick={() => setActiveSegment(1)}>Boliger og Nybygg</SegmentButton>
           <SegmentButton onClick={() => setActiveSegment(2)}>Ombygging</SegmentButton>
-        </SegmentController>
+        
         <SegmentText>{segmentTexts[activeSegment]}</SegmentText>
       </Segment>
       <QuoteGrid>
