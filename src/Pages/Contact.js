@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
 
 const FormContainer = styled.div`
   display: flex;
@@ -62,6 +63,19 @@ const HighlightedText = styled.h1`
   }
 `;
 
+const ContactInfoContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+`;
+
+const ContactInfoItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+`;
+
 const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -72,10 +86,24 @@ const ContactForm = () => {
     // Add your form submission logic here
     console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
   };
-
+  
   return (
     <>
     <HighlightedText>Kontakt oss</HighlightedText>
+    <ContactInfoContainer>
+      <ContactInfoItem>
+        <FaPhone />
+        <p>123 456 789</p>
+      </ContactInfoItem>
+      <ContactInfoItem>
+        <FaEnvelope />
+        <p>email@example.com</p>
+      </ContactInfoItem>
+      <ContactInfoItem>
+        <FaClock />
+        <p>Mon - Fri: 9:00 - 18:00</p>
+      </ContactInfoItem>
+    </ContactInfoContainer>
     <FormContainer>
       <Form onSubmit={handleSubmit}>
         <Label for="name">Ditt Navn</Label>
