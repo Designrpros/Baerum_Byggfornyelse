@@ -9,7 +9,7 @@ const SliderContainer = styled.div`
   display: flex;
   overflow: hidden;
   position: relative;
-  margin-top: 15px;
+  // margin-top: 15px;
 `;
 
 const ImageContainer = styled.div`

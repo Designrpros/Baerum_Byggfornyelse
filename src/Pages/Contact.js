@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import emailjs from 'emailjs-com';
 import { FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
 
 const FormContainer = styled.div`
@@ -93,8 +94,17 @@ const ContactForm = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    // Add your form submission logic here
-    console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
+  
+    emailjs.send('service_8itbdxm', 'template_bcgtjui', {
+      name: name,
+      email: email,
+      message: message
+    }, 'qBalOK5z0utTf94im')
+    .then((response) => {
+       console.log('SUCCESS!', response.status, response.text);
+    }, (err) => {
+       console.log('FAILED...', err);
+    });
   };
 
   return (
@@ -122,7 +132,7 @@ const ContactForm = () => {
         <Input id="email" type="email" placeholder="Din Email" value={email} onChange={e => setEmail(e.target.value)} required />
         <Label for="message">Din Melding</Label>
         <TextArea id="message" placeholder="Din Melding" rows="4" value={message} onChange={e => setMessage(e.target.value)} required />
-        <Button type="submit">Send Melding</Button>
+        <Button type="submit" onClick={handleSubmit} onTouchStart={handleSubmit}>Send Melding</Button>
       </Form>
     </FormContainer>
     </>
