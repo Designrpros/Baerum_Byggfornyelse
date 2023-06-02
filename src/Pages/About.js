@@ -39,16 +39,20 @@ const TextContainer1 = styled.div`
   @media (max-width: 768px) {
     grid-column: 1;
     grid-row: auto;
+    text-align: left;
+    justify-content: flex-start;
+    padding: 25px;
   }
 `;
+
 
 const TextContainer2 = styled.div`
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   text-align: left;
-  padding: 20px;
-  font: 20px rubik;
+  padding: 25px;
+  font-size: 18px;
   grid-column: ${props => props.column};
   grid-row: ${props => props.row};
 
@@ -57,6 +61,7 @@ const TextContainer2 = styled.div`
     grid-row: auto;
   }
 `;
+
 
 const HighlightedText = styled.span`
   font-weight: bold;
