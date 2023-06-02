@@ -5,10 +5,14 @@ import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 
 const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
   justify-content: center;
   align-content: center;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 const SegmentController = styled.div`
@@ -53,6 +57,7 @@ const QuoteText = styled.p`
   padding: 4rem;
   padding-top: 0;
   font-size: 1.5rem;
+  color: white;
 `;
 
 const QuoteIcon = styled.span`
