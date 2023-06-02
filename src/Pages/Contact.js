@@ -67,6 +67,11 @@ const ContactInfoContainer = styled.div`
   display: flex;
   justify-content: space-around;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const ContactInfoItem = styled.div`
@@ -74,6 +79,11 @@ const ContactInfoItem = styled.div`
   flex-direction: column;
   align-items: center;
   font-size: 1.5rem;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+  }
 `;
 
 const ContactForm = () => {
@@ -86,7 +96,7 @@ const ContactForm = () => {
     // Add your form submission logic here
     console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
   };
-  
+
   return (
     <>
     <HighlightedText>Kontakt oss</HighlightedText>
