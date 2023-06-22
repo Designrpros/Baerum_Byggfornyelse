@@ -134,15 +134,15 @@ const ContactForm = () => {
     <ContactInfoContainer>
       <ContactInfoItem>
         <FaPhone />
-        <p>123 456 789</p>
+        <p>452 41 250</p>
       </ContactInfoItem>
       <ContactInfoItem>
         <FaEnvelope />
-        <p>email@example.com</p>
+        <p>Post@BaerumByggfornyelse.no</p>
       </ContactInfoItem>
       <ContactInfoItem>
         <FaClock />
-        <p>Mon - Fri: 9:00 - 18:00</p>
+        <p>Mon - Fri: 7:00 - 16:00</p>
       </ContactInfoItem>
     </ContactInfoContainer>
     <FormContainer>

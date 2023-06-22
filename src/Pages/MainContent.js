@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-
 import House from "./House.jpg";
 import Section2 from './Section';
 import About from './About';
 import GallerySlider from './GallerySlider.js';
 import Contact from './Contact';
+import { useLocation } from 'react-router-dom';
+import ReactGA from 'react-ga';
 
-import { faPhone, faEnvelope, faClock } from '@fortawesome/free-solid-svg-icons';
+
+import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+ReactGA.initialize('G-ZKHW6JDXTX'); 
 
 const Main = styled.main`
   position: relative;
@@ -60,27 +64,36 @@ const HighlightedText = styled.span`
 `;
 
 const MainContent = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    ReactGA.pageview(location.pathname + location.search);
+  }, [location]);
+
   return (
     <>
-      <Main>
-        <OverlayText>
-          <h1>Velkommen til <br /><HighlightedText>Bærum<br />Byggfornyelse</HighlightedText></h1>
-          <p>
-          <FontAwesomeIcon icon={faPhone} className="icon" />
-          <br />
-          48 30 51 00
-        </p>
-        <p>
-          <FontAwesomeIcon icon={faEnvelope} className="icon" />
-          <br />
-          POST@BYGGFORNYELSE.NO
-        </p>
-        </OverlayText>
-      </Main>
-      <About />
-      <Section2 />
-      <GallerySlider />
-      <Contact />
+<Main>
+  <OverlayText>
+    <h1>
+      Velkommen til <br />
+      <HighlightedText>Bærum<br />Byggfornyelse</HighlightedText>
+    </h1>
+    <p>
+      <FontAwesomeIcon icon={faPhone} className="icon" />
+      <br />
+      <a href="tel:+4745241250">45 24 12 50</a> {/* Make the phone number clickable */}
+    </p>
+    <p>
+      <FontAwesomeIcon icon={faEnvelope} className="icon" />
+      <br />
+      <a href="mailto:POST@BaerumByggfornyelse.no">Post@BaerumByggfornyelse.no</a> {/* Make the email address clickable */}
+    </p>
+  </OverlayText>
+</Main>
+<About />
+<Section2 />
+<GallerySlider />
+<Contact />
     </>
   );
 };

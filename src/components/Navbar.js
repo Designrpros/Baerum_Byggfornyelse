@@ -79,7 +79,6 @@ const Navbar = ({ toggleSidebar }) => {
       {/* <StyledIcon onClick={toggleSidebar} /> */}
       <Link to="/">Bærum Byggfornyelse</Link>
       <Div1>
-        <StyledLinkedin />
       </Div1>
      
     </Nav>

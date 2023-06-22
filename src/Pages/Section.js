@@ -101,18 +101,16 @@ const Section2 = () => {
   const [activeSegment, setActiveSegment] = useState(0);
 
   const segmentTexts = [
-    'Moderne Byggfornyelse AS har gjennom flere år rehabilitert betong- og murfasader. Manglende vedlikehold og påføring av feil overflatebehandling, har medført fukt-, fukt- og korrosjonsskader. Riktig valg av materialer tilpasset underlaget, kunnskap om bygnings fysikk, kjemi og påførings metoder, er våre kunnskaper og tjenester vi kan tilby våre kunder.',
-    'Moderne Byggfornyelse er en solid entreprenørbedrift med røtter helt tilbake til 1930-tallet. Basert på stolte tradisjoner og lang erfaring, har vi spesialisert oss på rehabilitering av eksisterende bygg med fokus på fremtidsrettede løsninger',
-    'De siste årene har vi sett stadig større mangel på nye tomter og en økende andel eldre bygningsmasse i Osloregionen. Det gjør behovet for rehabilitering stadig viktigere. I Moderne Byggfornyelse har vi spesialisert oss på nettopp dette'   
+    'Vi er opptatt av kvalitet og legger stor vekt pa kundens behov og ønsker. Vi jobber stadig for at kunder oppfatter oss som en profesjonell og seriøs akter som leverer til avtalt tid og pris. Optimalisering av funksjoner og gode løsninger skal kjennetegne boliger utviklet av oss, og vi bestreber oss på å ligge i forkant av utvikling og bruk av energibesparende tiltak til boliger.',
+    'Bærum Byggfornyelse er Mester Sertifisert, Sentralt Godkjent, og Velux sertifisert',
   ];
 
   return (
     <GridContainer>
       <Segment>
         <SegmentController>
-          <SegmentButton selected={activeSegment === 0} onClick={() => setActiveSegment(0)}>Fasader</SegmentButton>
-          <SegmentButton selected={activeSegment === 1} onClick={() => setActiveSegment(1)}>Boliger og Nybygg</SegmentButton>
-          <SegmentButton selected={activeSegment === 2} onClick={() => setActiveSegment(2)}>Ombygging</SegmentButton>
+          <SegmentButton selected={activeSegment === 0} onClick={() => setActiveSegment(0)}>Kvalitet</SegmentButton>
+          <SegmentButton selected={activeSegment === 1} onClick={() => setActiveSegment(1)}>Sertifiseringer</SegmentButton>
         </SegmentController>
         <SegmentText>{segmentTexts[activeSegment]}</SegmentText>
       </Segment>
